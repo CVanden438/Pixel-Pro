@@ -39,7 +39,7 @@ const createImage = (
   canvas.width = newSize
   const iData = ctx?.createImageData(newSize, newSize)
   iData?.data.set(buffer)
-  ctx?.putImageData(iData, 0, 0)
+  ctx?.putImageData(iData as ImageData, 0, 0)
   const dataUri = canvas.toDataURL()
   return dataUri
 }

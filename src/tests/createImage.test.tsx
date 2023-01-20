@@ -14,13 +14,13 @@ test('createImage returns a valid data URI when given valid input', () => {
   ]
   const size = 3
   const multiplier = 2
-  const dataUri = createImage(pixels, size, multiplier)
+  const dataUri = createImage(pixels, size, multiplier) as string
   expect(typeof dataUri).toBe('string')
   expect(dataUri.slice(0, 21)).toBe('data:image/png;base64')
 })
 
 test('createImage returns null if invalid pixel array sent', () => {
-  const pixels = []
+  const pixels: any = []
   const size = 2
   const multiplier = 2
   const dataUri = createImage(pixels, size, multiplier)
